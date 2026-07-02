@@ -219,6 +219,30 @@ export const login = async ({ email, password, rememberMe }) => {
 };
 
 /**
+ * Request a password-reset link. Always resolves (the server never reveals
+ * whether the email exists). Returns { message }.
+ */
+export const forgotPassword = async (email) => {
+  if (!API_BASE_URL) {
+    return mockNetwork({
+      message: "If that email is registered, a password reset link has been sent.",
+    });
+  }
+  return postJson("/auth/forgot-password", { email });
+};
+
+/**
+ * Set a new password using the token from the reset email. Returns
+ * { user, token } and logs the user in on success.
+ */
+export const resetPassword = async (token, password) => {
+  if (!API_BASE_URL) {
+    return mockNetwork({ user: { name: "User", email: "" }, token: "mock-token" });
+  }
+  return postJson(`/auth/reset-password/${token}`, { password });
+};
+
+/**
  * Place an order. `items` is [{ productId, quantity }]; also needs a
  * shippingAddress and payment (mock card). Requires a token.
  * Falls back to a mock confirmation when no API is configured.

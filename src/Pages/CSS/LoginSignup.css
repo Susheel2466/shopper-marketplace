@@ -4,6 +4,18 @@
   background: #fce3fec2;
   padding-top: 100px;
 }
+.loginsignup-forgot {
+  margin: -10px 0 0;
+  text-align: right;
+}
+.loginsignup-forgot a {
+  color: #ff4141;
+  font-size: 14px;
+  text-decoration: none;
+}
+.loginsignup-forgot a:hover {
+  text-decoration: underline;
+}
 .loginsignup-container {
   width: 580px;
   height: auto;

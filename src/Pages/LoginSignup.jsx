@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import "./CSS/LoginSignup.css";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Context/AuthContext";
 import { useToast } from "../Context/ToastContext";
 import { login as loginRequest, signup as signupRequest } from "../services/api";
@@ -108,6 +108,11 @@ const LoginSignup = () => {
             />
             Remember me for 30 days
           </label>
+          {state === "Login" && (
+            <p className="loginsignup-forgot">
+              <Link to="/forgot-password">Forgot password?</Link>
+            </p>
+          )}
           {error && <p className="loginsignup-error">{error}</p>}
           <button type="submit" disabled={submitting}>
             {submitting ? "Please wait..." : "Continue"}

@@ -51,4 +51,28 @@ const orderStatusEmail = (order, toEmail) => ({
   `,
 });
 
-module.exports = { sendMail, orderConfirmationEmail, orderStatusEmail, smtpConfigured };
+const passwordResetEmail = (user, link) => ({
+  to: user.email,
+  subject: "Reset your SHOPPER password",
+  html: `
+    <h2>Password reset</h2>
+    <p>Hi ${user.name || "there"}, we received a request to reset your password.</p>
+    <p>
+      <a href="${link}" style="display:inline-block;padding:11px 20px;background:#ff4141;color:#fff;text-decoration:none;border-radius:6px;font-weight:600">
+        Reset password
+      </a>
+    </p>
+    <p>Or paste this link into your browser:<br>
+      <a href="${link}">${link}</a>
+    </p>
+    <p style="color:#777;font-size:13px">This link expires in 1 hour. If you didn't request this, you can safely ignore this email.</p>
+  `,
+});
+
+module.exports = {
+  sendMail,
+  orderConfirmationEmail,
+  orderStatusEmail,
+  passwordResetEmail,
+  smtpConfigured,
+};

@@ -30,6 +30,8 @@ import SellerDashboard from './Pages/SellerDashboard';
 import SellerProducts from './Pages/SellerProducts';
 import SellerOrders from './Pages/SellerOrders';
 import LoginSignup from './Pages/LoginSignup';
+import ForgotPassword from './Pages/ForgotPassword';
+import ResetPassword from './Pages/ResetPassword';
 import NotFound from './Pages/NotFound';
 import men_banner from './Components/Assets/banner_mens.png';
 import women_banner from './Components/Assets/banner_women.png';
@@ -167,6 +169,8 @@ function App() {
                 }
               />
               <Route path='/login' element={<LoginSignup />} />
+              <Route path='/forgot-password' element={<ForgotPassword />} />
+              <Route path='/reset-password/:token' element={<ResetPassword />} />
               <Route path='*' element={<NotFound />} />
             </Routes>
             <Footer />

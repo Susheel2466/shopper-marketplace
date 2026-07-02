@@ -24,6 +24,16 @@ const loginRules = [
   body("password").notEmpty().withMessage("Password is required"),
 ];
 
+const forgotPasswordRules = [
+  body("email").isEmail().withMessage("A valid email is required").normalizeEmail(),
+];
+
+const resetPasswordRules = [
+  body("password")
+    .isLength({ min: 8 })
+    .withMessage("Password must be at least 8 characters"),
+];
+
 const newsletterRules = [
   body("email").isEmail().withMessage("A valid email is required").normalizeEmail(),
 ];
@@ -48,6 +58,8 @@ module.exports = {
   validate,
   signupRules,
   loginRules,
+  forgotPasswordRules,
+  resetPasswordRules,
   newsletterRules,
   productCreateRules,
   productUpdateRules,

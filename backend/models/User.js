@@ -31,6 +31,9 @@ const userSchema = new mongoose.Schema(
     commissionRate: { type: Number, default: 0.1 }, // platform's cut (10%)
     wishlist: { type: [Number], default: [] }, // numeric product ids
     addresses: { type: [savedAddressSchema], default: [] },
+    // Password reset (token stored hashed; raw token only goes in the email).
+    resetPasswordToken: { type: String, default: null },
+    resetPasswordExpires: { type: Date, default: null },
   },
   { timestamps: true }
 );
