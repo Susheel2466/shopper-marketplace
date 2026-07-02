@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  frontend:
+    name: Frontend (build + Vitest)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm test
+
+  backend:
+    name: Backend (Jest + supertest)
+    runs-on: ubuntu-latest
+    services:
+      mongo:
+        image: mongo:7
+        ports:
+          - 27017:27017
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+      - run: npm ci
+      - run: npm test
+        env:
+          MONGO_URI_TEST: mongodb://127.0.0.1:27017/shopper_test
+          JWT_SECRET_TEST: ci-test-secret-0123456789-0123456789-0123456789

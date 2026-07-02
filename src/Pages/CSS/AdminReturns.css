@@ -1,0 +1,71 @@
+.adminreturns {
+  margin: 60px 80px;
+  min-height: 50vh;
+}
+.adminreturns h1 {
+  margin-bottom: 24px;
+}
+.adminreturns-error {
+  margin: 100px 80px;
+  color: #c0392b;
+}
+.adminreturns-empty {
+  color: #777;
+}
+.adminreturns-table {
+  border: 1px solid #e2e2e2;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.adminreturns-row {
+  display: grid;
+  grid-template-columns: 90px 1.4fr 2fr 0.8fr 1fr 1.4fr;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+.adminreturns-row:last-child { border-bottom: none; }
+.adminreturns-head {
+  background: #fafafa;
+  font-weight: 600;
+  color: #555;
+}
+.adminreturns-cust { display: flex; flex-direction: column; }
+.adminreturns-cust small { color: #888; }
+.adminreturns-reason {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.adminreturns-status {
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 13px;
+}
+.s-requested { color: #b76e00; }
+.s-approved { color: #1d4ed8; }
+.s-rejected { color: #c0392b; }
+.s-refunded { color: #1a7f37; }
+.adminreturns-actions {
+  display: flex;
+  gap: 8px;
+}
+.adminreturns-actions button {
+  padding: 6px 12px;
+  border: 1px solid #d0d0d0;
+  background: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  text-transform: capitalize;
+}
+.adminreturns-done { color: #999; }
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .adminreturns { margin: 40px 16px; }
+  .adminreturns-table { overflow-x: auto; }
+  .adminreturns-row { min-width: 760px; }
+}

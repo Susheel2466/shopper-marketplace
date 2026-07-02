@@ -1,0 +1,118 @@
+.dash {
+  margin: 50px 80px;
+  min-height: 50vh;
+}
+.dash h1 {
+  margin-bottom: 24px;
+}
+.dash-error {
+  margin: 100px 80px;
+  color: #c0392b;
+}
+.dash-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 28px;
+}
+.dash-card {
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.dash-card-label {
+  color: #888;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.dash-card-value {
+  font-size: 30px;
+  font-weight: 700;
+  color: #171717;
+}
+.dash-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+.dash-panel {
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  padding: 20px;
+}
+.dash-panel h3 {
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+.dash-empty {
+  color: #999;
+  font-size: 14px;
+}
+.dash-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  height: 180px;
+}
+.dash-bar-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+  gap: 6px;
+}
+.dash-bar {
+  width: 100%;
+  max-width: 40px;
+  background: linear-gradient(#ff6b6b, #ff4141);
+  border-radius: 4px 4px 0 0;
+  min-height: 2px;
+}
+.dash-bar-label {
+  font-size: 11px;
+  color: #888;
+}
+.dash-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.dash-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  gap: 12px;
+}
+.dash-tag {
+  text-transform: capitalize;
+  background: #f3f3f3;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 13px;
+}
+.dash-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 70%;
+}
+.dash-low { color: #b76e00; font-weight: 600; }
+.dash-out { color: #c0392b; font-weight: 700; }
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .dash { margin: 40px 16px; }
+  .dash-cards { grid-template-columns: repeat(2, 1fr); }
+  .dash-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 420px) {
+  .dash-cards { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,40 @@
+.skel-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto 0;
+}
+.skel-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.skel-img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 6px;
+}
+.skel-line {
+  height: 14px;
+  border-radius: 4px;
+}
+.skel-line.short {
+  width: 50%;
+}
+.skel-shimmer {
+  background: linear-gradient(90deg, #eee 25%, #f5f5f5 37%, #eee 63%);
+  background-size: 400% 100%;
+  animation: skel-shimmer 1.4s ease infinite;
+}
+@keyframes skel-shimmer {
+  0% { background-position: 100% 50%; }
+  100% { background-position: 0 50%; }
+}
+@media (max-width: 900px) {
+  .skel-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+}
+@media (max-width: 500px) {
+  .skel-grid { gap: 14px; }
+}

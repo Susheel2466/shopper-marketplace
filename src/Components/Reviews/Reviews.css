@@ -1,0 +1,81 @@
+.reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.reviews-form {
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.reviews-form h3 {
+  font-size: 18px;
+}
+.reviews-rate img {
+  width: 26px;
+  cursor: pointer;
+  margin-right: 4px;
+}
+.reviews-form textarea {
+  min-height: 80px;
+  padding: 12px;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  font-family: poppins;
+  font-size: 14px;
+  outline: none;
+  resize: vertical;
+}
+.reviews-form button {
+  align-self: flex-start;
+  padding: 10px 24px;
+  border: none;
+  background: #ff4141;
+  color: #fff;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.reviews-form button:disabled {
+  background: #f3a8a8;
+}
+.reviews-msg {
+  color: #1a7f37;
+  font-size: 14px;
+}
+.reviews-login {
+  color: #777;
+  font-style: italic;
+}
+.reviews-stars img {
+  width: 16px;
+}
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.reviews-item {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 14px;
+}
+.reviews-item-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+.reviews-item-text {
+  color: #444;
+  margin-bottom: 6px;
+}
+.reviews-item-date {
+  font-size: 13px;
+  color: #999;
+}
+.reviews-empty {
+  color: #777;
+}

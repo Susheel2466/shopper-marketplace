@@ -1,0 +1,36 @@
+# Render Blueprint for the SHOPPER backend API.
+# In Render: New → Blueprint → pick this repo. It reads this file.
+# Frontend is deployed separately on Vercel (see vercel.json + DEPLOYMENT.md).
+services:
+  - type: web
+    name: shopper-api
+    runtime: node
+    rootDir: backend
+    plan: free
+    buildCommand: npm ci
+    startCommand: node server.js
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET # Render generates a strong random value once
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 1d
+      - key: JWT_REMEMBER_EXPIRES_IN
+        value: 30d
+      # ---- Set these in the Render dashboard (sync:false = not stored in git) ----
+      - key: MONGO_URI # your MongoDB Atlas SRV connection string
+        sync: false
+      - key: CLIENT_URL # your Vercel URL, e.g. https://shopper.vercel.app
+        sync: false
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      # ---- Optional integrations (add in dashboard when you have keys) ----
+      # CLOUDINARY_URL, MEILI_HOST, MEILI_KEY, REDIS_URL,
+      # STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET,
+      # SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, EMAIL_FROM,
+      # COURIER_PROVIDER, SHIPROCKET_EMAIL, SHIPROCKET_PASSWORD, SENTRY_DSN

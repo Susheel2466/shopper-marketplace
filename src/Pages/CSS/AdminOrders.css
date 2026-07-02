@@ -1,0 +1,94 @@
+.adminorders {
+  margin: 60px 80px;
+  min-height: 50vh;
+}
+.adminorders h1 {
+  margin-bottom: 24px;
+  color: #171717;
+}
+.adminorders-error {
+  margin: 100px 80px;
+  color: #c0392b;
+  font-size: 18px;
+}
+.adminorders-error-inline {
+  color: #c0392b;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+.adminorders-empty {
+  color: #777;
+  font-size: 18px;
+}
+.adminorders-table {
+  border: 1px solid #e2e2e2;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.adminorders-row {
+  display: grid;
+  grid-template-columns: 90px 1.6fr 0.6fr 0.8fr 1fr 1.1fr;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border-bottom: 1px solid #eee;
+  font-size: 15px;
+}
+.adminorders-row:last-child {
+  border-bottom: none;
+}
+.adminorders-head {
+  background: #fafafa;
+  font-weight: 600;
+  color: #555;
+}
+.adminorders-id {
+  font-weight: 600;
+}
+.adminorders-customer {
+  display: flex;
+  flex-direction: column;
+}
+.adminorders-customer small {
+  color: #888;
+}
+.adminorders-date {
+  color: #666;
+}
+.adminorders-status {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #d0d0d0;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: capitalize;
+  cursor: pointer;
+  background: #fff;
+}
+.adminorders-status.status-pending {
+  color: #b76e00;
+  border-color: #f0c980;
+}
+.adminorders-status.status-paid {
+  color: #1a7f37;
+  border-color: #9ed8b0;
+}
+.adminorders-status.status-shipped {
+  color: #1d4ed8;
+  border-color: #aac3ff;
+}
+.adminorders-status.status-delivered {
+  color: #0f7a55;
+  border-color: #8fd6bd;
+}
+.adminorders-status.status-cancelled {
+  color: #c0392b;
+  border-color: #f0a8a8;
+}
+
+/* --- Responsive: scroll the table instead of squishing --- */
+@media (max-width: 900px) {
+  .adminorders { margin: 40px 16px; }
+  .adminorders-table { overflow-x: auto; }
+  .adminorders-row { min-width: 760px; }
+}

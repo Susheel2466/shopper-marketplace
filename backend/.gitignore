@@ -1,0 +1,6 @@
+node_modules/
+.env
+*.log
+
+# Local MongoDB data directory (never commit)
+.mongo-data/

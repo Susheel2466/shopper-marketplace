@@ -1,0 +1,205 @@
+.orderdetail {
+  margin: 50px 120px;
+  min-height: 50vh;
+}
+.orderdetail-error {
+  margin: 100px 120px;
+  color: #c0392b;
+}
+.orderdetail-back {
+  color: #ff4141;
+  text-decoration: none;
+  font-size: 14px;
+}
+.orderdetail-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 12px;
+}
+.orderdetail-status {
+  text-transform: capitalize;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: 20px;
+  background: #f3f3f3;
+  color: #555;
+}
+.orderdetail-status-pending { background: #fff4e5; color: #b76e00; }
+.orderdetail-status-paid { background: #e6f4ea; color: #1a7f37; }
+.orderdetail-status-shipped { background: #e7efff; color: #1d4ed8; }
+.orderdetail-status-delivered { background: #e6f4ea; color: #0f7a55; }
+.orderdetail-status-cancelled { background: #fdecec; color: #c0392b; }
+.orderdetail-date {
+  color: #888;
+  margin: 6px 0 30px;
+}
+.orderdetail-cancelled {
+  background: #fdecec;
+  color: #c0392b;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+.orderdetail-timeline {
+  display: flex;
+  justify-content: space-between;
+  max-width: 600px;
+  margin: 0 0 40px;
+  position: relative;
+}
+.orderdetail-timeline::before {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 5%;
+  right: 5%;
+  height: 3px;
+  background: #e2e2e2;
+  z-index: 0;
+}
+.orderdetail-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 1;
+}
+.orderdetail-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #e2e2e2;
+  border: 3px solid #fff;
+}
+.orderdetail-step.done .orderdetail-dot {
+  background: #1a7f37;
+}
+.orderdetail-step-label {
+  font-size: 13px;
+  color: #666;
+}
+.orderdetail-step.done .orderdetail-step-label {
+  color: #1a7f37;
+  font-weight: 600;
+}
+.orderdetail-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 24px;
+}
+.orderdetail-card {
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  padding: 20px;
+}
+.orderdetail-card h3 {
+  margin-bottom: 12px;
+  font-size: 17px;
+}
+.orderdetail-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+}
+.orderdetail-totals {
+  margin-top: 12px;
+}
+.orderdetail-total-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+}
+.orderdetail-total-row.discount {
+  color: #1a7f37;
+}
+.orderdetail-total-row.grand {
+  font-weight: 700;
+  font-size: 18px;
+  border-top: 1px solid #eee;
+  margin-top: 6px;
+  padding-top: 10px;
+}
+.orderdetail-address {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+}
+.orderdetail-cancel {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #c0392b;
+  background: #fff;
+  color: #c0392b;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.orderdetail-cancel:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.orderdetail-return {
+  margin-top: 20px;
+  border-top: 1px solid #eee;
+  padding-top: 16px;
+}
+.orderdetail-return h3 {
+  margin-bottom: 10px;
+}
+.orderdetail-return textarea {
+  width: 100%;
+  min-height: 60px;
+  padding: 10px;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  font-family: poppins;
+  outline: none;
+  resize: vertical;
+}
+.orderdetail-return-msg {
+  color: #1a7f37;
+  font-size: 13px;
+  margin: 8px 0;
+}
+.orderdetail-return button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #ff4141;
+  color: #fff;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.orderdetail-return button:disabled {
+  opacity: 0.5;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .orderdetail { margin: 40px 16px; }
+  .orderdetail-grid { grid-template-columns: 1fr; }
+  .orderdetail-timeline { max-width: 100%; }
+}
+@media (max-width: 420px) {
+  .orderdetail-step-label { font-size: 11px; }
+}
+
+.orderdetail-invoice {
+  margin-top: 14px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d0d0d0;
+  background: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+.orderdetail-invoice:hover { border-color: #ff4141; color: #ff4141; }

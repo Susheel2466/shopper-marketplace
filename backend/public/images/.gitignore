@@ -1,0 +1,6 @@
+# Runtime uploads are ephemeral on hosted platforms — don't commit them.
+# In production, set CLOUDINARY_URL so uploads go to the CDN instead of disk.
+upload_*
+
+# The seed catalog images (product_*.png) ARE committed so they deploy — they
+# are not matched above and stay tracked.
