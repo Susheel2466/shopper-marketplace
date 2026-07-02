@@ -114,13 +114,18 @@ const Navbar = () => {
                 <>
                     <Link to="/profile" className="nav-orders">Hi, {user.name}</Link>
                     {user.role === "admin" && (
-                        <>
-                            <Link to="/admin" className="nav-orders">Dashboard</Link>
-                            <Link to="/admin/orders" className="nav-orders">Admin Orders</Link>
-                            <Link to="/admin/products" className="nav-orders">Admin Products</Link>
-                            <Link to="/admin/returns" className="nav-orders">Returns</Link>
-                            <Link to="/admin/sellers" className="nav-orders">Sellers</Link>
-                        </>
+                        <div className="nav-has-dropdown">
+                            <button type="button" className="nav-orders nav-dropdown-toggle">
+                                Admin <span className="nav-dropdown-caret">▾</span>
+                            </button>
+                            <div className="nav-dropdown">
+                                <Link to="/admin">Dashboard</Link>
+                                <Link to="/admin/orders">Orders</Link>
+                                <Link to="/admin/products">Products</Link>
+                                <Link to="/admin/returns">Returns</Link>
+                                <Link to="/admin/sellers">Sellers</Link>
+                            </div>
+                        </div>
                     )}
                     {user.role === "seller" && (
                         <Link to="/seller" className="nav-orders">Seller Hub</Link>
