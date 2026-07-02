@@ -1,5 +1,6 @@
 .navbar{
     display: flex;
+    align-items: center;
     justify-content: space-around;
     padding: 16px;
     box-shadow: 0 1px 3px -2px black;
@@ -95,7 +96,7 @@
     align-items: center;
     border: 1px solid #ddd;
     border-radius: 50px;
-    height: 42px;
+    height: 44px;
     position: relative;
 }
 .nav-search input{
