@@ -46,6 +46,11 @@ if (!isTest && (!jwtSecret || jwtSecret.length < 32 || jwtSecret.includes("chang
 
 const app = express();
 
+// Behind a hosting proxy (Render/Vercel/etc), trust X-Forwarded-* so
+// req.protocol is "https" (correct image URLs, no mixed-content) and
+// rate-limiting sees the real client IP.
+app.set("trust proxy", 1);
+
 // Structured request logging (quiet under test).
 if (process.env.NODE_ENV !== "test") {
   app.use(pinoHttp({ autoLogging: true, level: process.env.LOG_LEVEL || "info" }));
